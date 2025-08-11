@@ -16,4 +16,26 @@ show tables;
 구조  desc 테이블이름;
 목록 select host, user from user;
 
+select *from 테이블명
 select 컬럼명 or *from 테이블명 where 조건절 
+
+CRUD
+C - insert
+R - select
+U - update 
+D - delete
+
+R
+select 컬럼명 from 테이블명 where 컬럼명 = '컬럼내용';
+
+C
+insert into 테이블명 (컬럼명) values (컬럼내용);
+
+U
+update 테이블 set 컬러명=컬럼내용 where 대상컬럼명=컬럼내용;
+
+D
+delete 테이블 form where 컬럼='컬럼내용';
+
+INSERT INTO city (ID, Name, CountryCode, District, Population) 
+VALUES (10000, 'Gimpo','KOR','Gyeonggi',485532);

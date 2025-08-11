@@ -172,48 +172,79 @@ fetch("./js/best.json")
 fetch("./js/main.json")
 .then(res => res.json())
 .then(list => {
-    const htmlArr = list.map(data => {
-        //색상처리
-        const colorHtml = data.color.map(co=>{
-            return `<span class="${co}"></span>`;
-        }).join("");
+    // 1. 상품 카드 HTML 생성
+    const productHtmlArr = list.map(data => {
+        const colorHtml = data.color.map(co => `<span class="${co}"></span>`).join("");
         return `
-        <div class="col-md-3 col-12 mb-5">
-            <div class="card" style="width: 18rem;">
-                <a href="#" class="mycard">
-                    <div class="card-img">
-                        <img src="./${data.img}" alt="${data.alt}">
-
-                        <div class="btn-box">
-                            <button type="button" class="best-cart">
-                                <i class="ri-shopping-bag-4-line"></i>
-                            </button>
-                            <button type="button" class="best-heart">
-                                <i class="ri-heart-line"></i>
-                            </button>
+            <div class="col-md-3 col-12 mb-5">
+                <div class="card" style="width: 18rem">
+                    <a href="#" class="mycard" data-toggle="modal" data-target="#myModal${data.id}">
+                        <div class="card-img">
+                            <img src="./${data.img}" alt="${data.alt}">
+                            <div class="btn-box">
+                                <button type="button" class="best-cart"><i class="ri-shopping-bag-4-line"></i></button>
+                                <button type="button" class="best-heart"><i class="ri-heart-line"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="card-body">
-                        <div class="pd-color">
-                            ${colorHtml}
+                        <div class="card-body">
+                            <div class="pd-color">${colorHtml}</div>
+                            <div>${data.title}</div>
+                            <div>
+                                <del>${data.cost}원</del>
+                                <span class="sail">${data.sale}</span>
+                                <span class="money">${data.price}원</span>
+                            </div>
                         </div>
-                        <div>${data.title}</div>
-                        <div>
-                            <del>${data.cost}원</del>
-                            <span class="sail">${data.sale}</span>
-                            <span class="money">${data.price}원</span>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
-        </div>
-        `
-            
+        `;
     });
-    document.getElementById("list-item").innerHTML = htmlArr.join("");
+
+    // 2. 모달 HTML 생성
+    const modalHtmlArr = list.map(data => {
+        const colorHtml = data.color.map(co => `<span class="${co}"></span>`).join("");
+        return `
+            <div class="modal fade" id="myModal${data.id}">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">${data.title}</h3>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="pd-color">${colorHtml}</div>
+                            <div>
+                                <del>${data.cost}원</del>
+                                <span class="sail">${data.sale}</span>
+                                <span class="money">${data.price}원</span>
+                            </div>
+                            <lable for="size">사이즈</lable>
+                            <select name="size" id="size">
+                                <option>xxs</option>
+                                <option>xs</option>
+                                <option>s</option>
+                                <option>m</option>
+                                <option>l</option>
+                                <option>xl</option>
+                                <option>xxl</option>
+                            </select>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    // 3. 각각 다른 컨테이너에 삽입
+    document.getElementById("list-item").innerHTML = productHtmlArr.join("");
+    document.getElementById("modal-container").innerHTML = modalHtmlArr.join("");
 })
-.catch(err=> console.error("🤢 데이터 로딩에 실패했습니다.", err));
+.catch(err => console.error("🤢 데이터 로딩에 실패했습니다.", err));
 
 }); //jquery
 

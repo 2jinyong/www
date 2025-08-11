@@ -420,6 +420,24 @@ a.apple{
 .green{
     background:green;
 }
+.gray{
+    background: gray;
+}
+.wine{
+    background: rgb(124, 6, 124);
+}
+.red{
+    background: red;
+}
+.brown{
+    background: brown;
+}
+.gold{
+    background: gold;
+}
+.silver{
+    background: silver;
+}
 .blue{
     background:blue;
 }
@@ -427,11 +445,11 @@ a.apple{
     background:black;
 }
 .beige{
-     border:1px solid #333;
+    border:1px solid #333;
     background:beige;
 }
 .ivory{
-     border:1px solid #333;
+    border:1px solid #333;
     background:ivory;
 }
 .pink{
@@ -475,6 +493,9 @@ a.apple{
 }
 section h2{
     text-transform: uppercase;
+}
+.modal-body img{
+    width: 100%;
 }
 
 /** form input 디자인 **/
