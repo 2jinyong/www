@@ -449,6 +449,10 @@ a.apple{
 .wine{
     background-color:#a8297e;
 }
+.red{
+    background: red;
+}
+    
 .best-title{
     font-size:14px;
     font-weight:700;
