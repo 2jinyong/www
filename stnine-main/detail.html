@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stNine</title>
+    <title>stNine-detail</title>
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/animate.min.css">
@@ -46,7 +46,7 @@
                     <a href="#" class="sns kakao"><i class="ri-kakao-talk-line"></i></a>
                 </div>
                 <div class="col-md-6 centerbox text-center animate__animated animate__fadeInDown animate__delay-1s">
-                  <a href="#">stnine</a>
+                  <a href="index.html">stnine</a>
                 </div> 
                 <div class="col-md-3 rightbox animate__animated animate__fadeInDown animate__delay-1s">
                     <form name="form" id="search">
@@ -150,36 +150,66 @@
         </nav>
     </header>
 
-    <!-- ############### HERO PAGE ################# -->
-    <section id="hero" class="animate__fadeInDown animate__delay-3s">
-       <div class="slide-container">
-          <div class="mySlides fd">
-             <img src="images/banner01.jpg" alt="banner01">
-          </div>
-          <div class="mySlides fd">
-             <img src="images/banner02.jpg" alt="banner02">
-          </div>
-          <div class="mySlides fd">
-             <img src="images/banner03.jpg" alt="banner03">
-          </div>                    
-       </div>   
-    </section>
-    <!-- section best -->
-    <section id="best" class="container position-relative">
-        <h2 class="text-center mt-5 pt-5 pb-5">BEST ITEMS</h2>
+    <section id="detail" class="container">
 
-        <div id="prev" class="npbtn"><i class="ri-arrow-left-s-line"></i></div>
-        <div id="next" class="npbtn"><i class="ri-arrow-right-s-line"></i></div>
-        <ul id="page"></ul>
-        <div class="slide-wrapper">
-            <div class="slide-wrapper-in"></div>
-        </div> 
-    </section>
-    <section id="arrivals">
-        <h2 class="text-center mt-5 pt-5 pb-5">New Arrivals</h2>
-        <div class="container">
-            <div class="row" id="list-item"></div>
-        </div>
+       <div class="w-100 d-flex justify-content-end">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">홈</a></li>
+                <li class="breadcrumb-item"><a href="#">BEST</a></li>
+                <li class="breadcrumb-item active" aria-current="page">MyList</li>
+            </ol>
+          </nav>
+       </div>
+
+       <div class="row">
+           <div class="col-md-6">
+               <div class="d-flex">
+                  <div class="lgimg thimg">
+                    <img src="images/015.jpg" alt="015" class="img-fluid" />
+                  </div>
+                  <div class="smimg">
+                     <img src="images/015.jpg" alt="015" class="img-fluid" />
+                     <img src="images/016.jpg" alt="015" class="img-fluid" />
+                     <img src="images/017.jpg" alt="015" class="img-fluid" />
+                  </div>  
+               </div>
+           </div>
+           <div class="col-md-6 d-dtail">
+                <div class="d-title">
+                    <h2 id="optionTitle">공바체크원피스</h2>
+                    <span class="pink"></span>
+                    <span class="green"></span>
+                </div>
+                <form name="detailForm" id="detailForm">
+                <ul class="d-list">
+                    <li><label>판매가</label><div class="font-weight-bold dprice">15,000원</div> </li>
+                    <li><label>할인판매가</label><div class="font-weight-bold text-danger"><del class="dsale">18,000원</del></div></li>
+                    <li><label>color</label><div id="cpdColor">d</div></li>
+                    <li><label>size</label><div>
+                          <select name="size" class="size" id="cpdSize">
+                             <option value="">사이즈 선택</option>
+                          </select> 
+                    </div></li>
+                </ul>
+ <!-- 수량 -->
+                <div class="qyt d-none">
+                    <div class="setpd">상품이름-red-L</div>
+                         <div class="quantity d-flex">
+                            <input type="text" id="optqut" readonly name="optqut" class="optqut" value="1">
+                            <div class="d-flex flex-column">
+                               <a href="#" class="upqut" id="upqut"><i class="ri-arrow-up-s-fill"></i></a>
+                               <a href="#" class="downqut" id="downqut"><i class="ri-arrow-down-s-fill"></i></a>
+                            </div> 
+                         </div>
+                    </div>
+                    <div class="result" id="result">
+                         <!-- 최종가격 -->
+                    </div>     
+                </div>
+             </form>         
+           </div><!--col-->
+       </div><!--/row-->
     </section>
 
     <footer>
@@ -233,64 +263,10 @@
        </div>
     </footer>
     
-    <!--장바구니를 위한 모달 창-->
-    <div class="modal fade" id="optionModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title"><span id="optionTitle"></span></h4>
-                    <button type="button" 
-                            class="close" 
-                            aria-label="닫기"><i class="ri-close-line"></i></button>
-                </div>
-                <form name="cartOption" method="post" class="modal-body" id="cartOption">
-                    <div class="d-flex">
-                        <div class="col-3 thimg">
-                            <!-- 이미지 출력 -->
-                        </div>
-                        <div class="col-9">
-                            <ul class="list-item">
-                                <li class="d-flex"><label class="list-label">색상</label>
-                                    <div class="cpd-color" id="cpdColor">
-                                        <!--색상값 출력-->
-                                    </div>
-                                </li>
-                                <li><label class="list-label">사이즈</label>
-                                    <select name="size" class="size" id="cpdSize">
-                                        <option value="">사이즈 선택</option>
-                                    </select> 
-                                </li>
-                            </ul>
-                        </div>
-                   </div>
-                   <!-- 수량 -->
-                      <div class="qyt d-none">
-                         <div class="setpd">상품이름-red-L</div>
-                         <div class="quantity d-flex">
-                            <input type="text" id="optqut" readonly name="optqut" class="optqut" value="1">
-                            <div class="d-flex flex-column">
-                               <a href="#" class="upqut" id="upqut"><i class="ri-arrow-up-s-fill"></i></a>
-                               <a href="#" class="downqut" id="downqut"><i class="ri-arrow-down-s-fill"></i></a>
-                            </div> 
-                        </div>
-                      </div>
-                      <div class="result" id="result">
-                         <!-- 최종가격 -->
-                      </div>
-
-                    </form>
-                <div class="modal-footer">
-                    <button type="button" id="btnOrder" class="btn btn-dark">바로주문</button>
-                    <button type="button" id="btnAddCart" class="btn btn-dark">장바구니 담기</button>
-                </div>
-             </div>
-        </div>
-    </div>
-
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/detail.js"></script>
 
 </body>
 </html>
