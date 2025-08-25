@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position2</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+            width: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+    
+        }
+        li{
+            line-height: 60px;
+            border-bottom: 1px dashed black;
+            cursor: pointer;
+                
+        }
+        .box{
+            position: absolute;
+            top: 270px;
+            left: 550px;
+        }
+        .last{
+            border: none;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        .plus{
+            position: absolute;
+            top: 20px;
+            left: 550px;
+        }
+        .item{
+            position: absolute;
+            top: 150px;
+            left: 550px;
+        }
+       
+        .luck{
+            display: none;
+            z-index: 10;
+        }
+        li:hover > .luck{
+            display: block;
+        }
+               
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="one"><img src="/img-folder/p.png" alt="강화"><span>강화 운세보기</span></li>
+        <li class="two"><img src="/img-folder/sord.png" alt="득템"><span>득템 운세보기</span></li>
+        <li class="last"><img src="/img-folder/box.png" alt="뽑기"><span>뽑기 운세보기</span></li>
+    </ul>
+    
+    
+    <div class="luck plus">
+    오늘의 강화 운세는?<br>ㅇㄴㄻㄴㅇㄻㄹㄴㄹㄴㄴㄹㅇㅁㄹㅇㄴㄹ
+    </div>
+    <div class="luck item">
+    오늘의 득템 운세는?<br>ㅇㄴㄻㄴㅇㄻㄹㄴㄹㄴㄴㄹㅇㅁㄹㅇㄴㄹ
+    </div>
+    <div class="luck box">
+    오늘의 뽑기 운세는?<br>ㅇㄴㄻㄴㅇㄻㄹㄴㄹㄴㄴㄹㅇㅁㄹㅇㄴㄹ
+    </div>
+
+</body>
+</html>

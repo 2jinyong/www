@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            cursor: pointer;
+            border: none;
+        }
+        .ham{
+            background: url(../img-folder/햄버거02.png)no-repeat center center;
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+
+        }
+        #col{
+            width: 300px;
+            height: 500px;
+            background-color: aquamarine;
+            display: none;
+        }
+        @media screen and (min-width:1400px) {
+        #box{
+            width: 1000px;
+            height: 500px;
+            background-color: aqua;
+        }    
+        }
+        
+        @media screen and (max-width:375px) {
+            .box{
+            width: 300px;
+            height: 600px;
+            background-color: lightblue;
+        }    
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="col"></div>
+    
+    <button class="ham" onclick="ham()"></button>
+    <button onclick="location.reload()">새로고침</button>
+    <script>
+        function ham(){
+            document.getElementById("box").style.display = 'none';
+            document.getElementById("col").style.display = 'block';
+        }
+    </script>
+</body>
+</html>

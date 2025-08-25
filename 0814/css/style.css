@@ -1,0 +1,34 @@
+*{box-sizing: border-box;}
+.cupon{
+    background: #eadadb;
+    font-weight: 500;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.topnav ul li a{
+    color: black;
+    font-size: 14px;
+    
+}
+.menu{
+    height: 50px;
+}
+.menu-in{
+    height: 100%;
+}
+.topnav{
+    height: 100%;
+}
+.topnav ul{
+    height: 100%;
+}
+.flagbox{
+    width: 80px;
+    height: 100%;
+    font-size: 12px;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+        function displayer(text){
+            document.getElementById("demo").innerHTML = text;
+        }
+        
+        function displayer2(text){
+            document.getElementById("demo2").innerHTML = text;
+        }
+
+        function cal(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        cal(10,12,displayer);
+    </script>
+</body>
+</html>

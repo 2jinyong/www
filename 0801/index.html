@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow:hidden;
+        }
+        div{
+            width:100px;
+            height:100px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:red;
+        }
+        .start{
+            position:absolute;
+            bottom: 100px;
+            left: 10px;
+        }
+        .stop{
+            position: absolute;
+            bottom: 100px;
+            right: 10px;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        // });
+
+        $(function(){
+           $(".start").click(function(){
+              $("div").animate({ 
+                 left: '3000px'
+              }, 1000);
+           });
+           $('.stop').click(function(){
+              $('div').stop();
+           });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <button class="start">시작</button>
+    <button class="stop">정지</button>
+</body>
+</html>

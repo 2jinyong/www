@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <style>
+        *{box-sizing: border-box;}
+        .slide{
+            margin: 0 auto;
+            width: 400px;
+            height: 250px;
+            border: 1px solid black;
+            /* overflow: hidden; */
+        }
+        .slide-in{
+            width: 1600px;
+            height: 100%;
+            display: flex;
+            position: relative;
+        }
+        .gray{
+            width: 400px;
+            background-color: gray; 
+        }
+        .green{
+            width: 400px;
+            background-color: green; 
+        }
+        .blue{
+            width: 400px;
+            background-color: blue; 
+        }
+        .pink{
+            width: 400px;
+            background-color: pink;
+        }
+        .arrowbox{
+            margin: 0 auto;
+            font-size: 2em;
+            width: 400px;
+            justify-content: space-between;
+            display: flex;
+        }
+        .arrowbox i{
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-in">
+            <div class="gray"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+            <div class="pink"></div>
+        </div>
+    </div>
+
+    <div class="arrowbox">
+        <div><i class="left ri-arrow-left-line"></i></div>
+        <div><i class="right ri-arrow-right-line"></i></div>
+    </div>
+
+
+    <script>
+        $(function(){
+            setInterval(function(){
+                $('.slide-in').animate({
+                    left: '-400px'
+                },1000,function(){
+                    $(this).append($(this).children().first());
+                    $(this).css('left',0);
+                });
+            },5000);
+
+            $('.left').click(function(){
+                $('.slide-in').stop().animate({
+                left: '-400px'
+                },1000,function(){
+                    $(this).append($(this).children().first());
+                    $(this).css('left',0);
+                });
+            })
+
+            $('.right').click(function(){
+                $('.slide-in').prepend($('.slide-in').children().last());
+                $('.slide-in').css('left','-400px');
+                $('.slide-in').animate({
+                    left : '0px'
+                },1000);
+
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        #hide,#hide2,#hide3,#hide4,#hide5{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>1번문제</h1>
+    <ul>
+        <li>제목1
+            <ul>
+                <li id="hide">- 내용1 sfadfsafdsfasdfassdfa</li>
+            </ul>
+        </li>
+        <li>제목2
+            <ul>
+                <li id="hide2">- 내용2 dsaffsfasdfsdafsadfdf</li>
+            </ul>
+        </li>
+    </ul>
+
+    <button onclick="small()">누르시오</button>
+    <button onclick="location.reload()">새로고침</button>
+
+    <p>-------------------------------------</p>
+
+    <h1>각 나라의 수도는 뭘까요?</h1>
+    <button onclick="country()">대한한국</button><br>
+    <p id="hide3">서울</p>
+    <button onclick="country2()">프랑스</button><br>
+    <p id="hide4">파리</p>
+    <button onclick="country3()">영국</button>
+    <p id="hide5">런던</p>
+
+    <script>
+        function small(){
+            document.getElementById("hide").style.display = 'block';
+            document.getElementById("hide2").style.display = 'block';
+        }
+
+        function country(){
+            document.getElementById("hide3").style.display = 'block';
+        }
+        function country2(){
+            document.getElementById("hide4").style.display = 'block';
+        }
+        function country3(){
+            document.getElementById("hide5").style.display = 'block';
+        }
+    </script>
+</body>
+</html>

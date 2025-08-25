@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <style>
+        .boxclass{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .title{
+            cursor: pointer;
+        }
+        .content{
+            display: none;
+        }
+    </style>
+    <script>
+        // $(document).ready(function(){
+
+        // });
+        $(function(){
+            $('.title').click(function(){
+                $(this).find('.content').fadeToggle(3000, function(){
+                    alert("fade 작업 완료");
+                });
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="title">1.제목입니다.
+            <p class="content">이제목의 내용은 1입니다.</p>    
+        </li>
+       <li class="title">2.제목입니다.
+            <p class="content">이제목의 내용은 2입니다.</p>    
+        </li>
+        <li class="title">3.제목입니다.
+            <p class="content">이제목의 내용은 3입니다.</p>    
+        </li>
+        <li class="title">4.제목입니다.
+            <p class="content">이제목의 내용은 4입니다.</p>    
+        </li>
+        </li>
+    </ul>
+</body>
+</html>

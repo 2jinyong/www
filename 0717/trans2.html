@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 200px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px gray;
+            margin: 50px;
+            transition: all 0.3s ease;
+        }
+        .card:hover{
+            transform: scale(1.05);
+        }
+        .card img{
+            transition: all 0.3s ease;
+        }
+        .card img:hover{
+            transform: scale(1.2);
+        }
+        .btn{
+            background: green;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.01s ease;
+        }
+        .btn:active{
+            transform: scale(0.95);
+        }
+        .nav-item{
+            display: inline-block;
+            position: relative;
+            padding: 10px;
+        }
+        .nav-item::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: aqua;
+            transform: scaleX(0);
+            transition: all 300ms;
+            transform-origin: center;
+
+            
+        }
+        .nav-item:hover::after{
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card"><img src="https://picsum.photos/id/220/200/250" alt="픽숨"></div>
+    <button class="btn">click me</button>
+
+    <div class="nav-item">home</div>
+    <div class="nav-item">about</div>
+
+
+
+
+
+</body>
+</html>

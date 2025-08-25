@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        const info = navigator.userAgent.toLocaleLowerCase();
+        //운영 체제 정보를 구함, 구한 정보는 소문자로 출력
+        let os = null;
+        if(info.indexOf('widows')>-1) {
+            os = "윈도우";
+        }else if(info.indexOf('machintosh')>-1) {
+            os = "애플";
+        }else if(info.indexOf('iphone')>-1) {
+            os = "아이폰";
+        }else if(info.indexOf('android')>-1) {
+            os = "안드로이드";
+        }
+    
+        const scw = screen.width;
+        const sch = screen.height;
+        const scc = screen.colorDepth;
+
+        const ifv = `<p>내가 보고 있는 컴퓨터는 ${os} 이며 종합적으로 ${info} 입니다.<br> 그리고 가로 ${scw}px, 세로 ${sch}px, 해상도 ${scc}bit 입니다.<p>`;
+        document.getElementById("container").innerHTML = ifv;
+    </script>
+</body>
+</html>

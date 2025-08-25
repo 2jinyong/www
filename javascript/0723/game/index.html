@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">도전! 가위,바위,보로 컴퓨터를 이겨라!!!</h1>
+        <div class="resultbox">
+            <div class="me">
+                <h2>나</h2>
+                <div class="rps" id="me"></div>
+            </div>
+            <div class="com">
+                <h2>컴퓨터</h2>
+                <div class="rps" id="com"></div>
+            </div>
+        </div>
+    
+        <p id="result" class="text-center">결과</p>
+        <div class="gamebox">
+            <button class="btn" onclick="play('가위');">가위</button>
+            <button class="btn" onclick="play('바위');">바위</button>
+            <button class="btn" onclick="play('보');">보</button>
+        </div>
+        <div class="final-result" id="final"></div>
+    </div>
+
+
+
+    <script src="./js.js"></script>
+</body>
+</html>

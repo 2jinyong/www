@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi</title>
+</head>
+<body>
+    <script>
+        // let x = 10;
+        // let y = 20;
+        // let z;
+
+        // x--;
+        // document.write(x,"<br>"); //x:9
+
+        // x++;
+        // document.write(x,"<br>"); //x:10
+
+        // z = y++;
+        // document.write(z,"<br>"); //z:20, y:21
+
+        // z = ++y;
+        // document.write(z,"<br>"); //z:22 y:22
+
+        // ------------------------------------------
+        // const a = 10;
+        // const b = 20;
+        // const c = 10;
+        // const f = "20";
+        // let result;
+
+        // document.write(result = a>b,"<br>");
+        // document.write(a>b,"<br>");
+        // document.write(a<=b,"<br>");
+        // document.write(b==f,"<br>");
+        // document.write(a!=b,"<br>");
+        // document.write(b===f,"<br>");
+
+        // ------------------------------------------
+
+        // let a = 10, b = 20, m = 30, n = 40;
+        // let result;
+        // result = a > b||
+        // document.write(result,"br");
+
+        // const a = 10;
+        // const b = 3;
+
+        // let result = a > b ? "성공":"실패";
+        
+        // alert(result);
+
+
+        let name = prompt("이름을 입력하세요");
+        let height = prompt("키를 입력하세요");
+        let weight = prompt("몸무게를 입력하세요");
+        
+        let gweight = (height - 100)*0.9; //평균체중
+        let result = (weight >= gweight -5 && weight <= gweight +5); // 오차범위 +-5
+        result = result ?"적정체중입니다.":"적정체중이아닙니다.";
+        document.write(name + "님은" + result);        
+        
+        
+
+        
+
+        
+
+    </script>
+</body>
+</html>

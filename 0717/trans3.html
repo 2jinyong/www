@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            margin: 40px;
+            transition: all;
+        }
+        .box:hover{
+            transform: rotate(45deg);
+        }
+        .center{
+            transform-origin: center center;
+        }
+        .top-left{
+            transform-origin: left top;
+        }
+        .bottom-right{
+            transform-origin: bottom right;
+        }
+    </style>
+</head>
+<body>
+    <div class="box center"></div>
+    <div class="box top-left"></div>
+    <div class="box bottom-right"></div>
+</body>
+</html>

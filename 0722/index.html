@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootStrap4 Web</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" sizes="64x64" href="images/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="images/favicon-96x96.png">
+    <!-- style -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- script -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="jumbotron text-center" style="margin:0;">
+       <h1>My First Bootstrap Web Page</h1>
+       <p>대한민국의 국민이 되는 요건은 법률로 정한다.</p>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <div class="container">
+            <!--로고 부분--> 
+            <a href="#" class="navbar-brand"><i class="ri-home-smile-fill"></i> My WEB</a>
+            
+            <!-- 모바일에서 보이는 부분 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav">
+                <i class="ri-menu-line"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mynav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="" class="nav-link" type="#">about</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" type="#">product</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" type="#">works</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" type="#">contact</a></li>
+                    <li class="nav-item"><a href="" class="nav-link" type="#">community</a>
+                      게시판  FAQ  Q&A
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input type="text" class="form-control mr-sm-2" placeholder="검색...">
+                    <button type="button" class="btn btn-success my-2 my-sm-0">검색</button>
+                </form>
+            </div>
+      </div> 
+    </nav>
+</body>
+</html>

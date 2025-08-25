@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>138p~</title>
+    <style>
+        form{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <h1>회원 가입을 환영합니다</h1>
+    <form>
+        <fieldset>
+            <legend>사용자정보</legend>
+                <ul>
+                    <li><label>아이디 <input type="text" id="uid"></label></li>
+                    <li><label>이메일 <input type="email" id="umaill"></label></li>
+                    <li><label>비밀번호 <input type="text" id="password1"></label></li>
+                    <li><label>비밀번호 확인 <input type="text" id="password2"></label></li>
+                </ul>
+
+        </fieldset>
+        <fieldset>
+            <legend>이벤트와 새로운소식</legend>
+                <input type="radio" name="mailling" value="mailling-yes">
+                <label for="mailling-y">메일 수신</label>
+                <input type="radio" name="mailling" value="mailling-no">
+                <label for="mailling-n">메일 수신 안 함</label>
+        </fieldset>
+        <div>
+            <input type="submit" value="가입하기">
+            <input type="reset" value="취소">
+        </div>
+    </form>
+</body>
+</html>

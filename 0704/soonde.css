@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(208, 221, 233);
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: darkseagreen;
+}
+
+h3 {
+    color: rgb(153, 134, 238);
+}
+
+p {
+    color: darkgoldenrod;
+    
+}
+
+dl {
+    color:rgb(223, 133, 168);
+}
+
+li {
+    background-color: rgb(228, 206, 206);
+    color: chocolate;
+}
+
+li#two {
+    background-color: rgb(142, 59, 231);
+    color: rgb(193, 178, 207);
+}
+
+#finish {
+    background-color: aqua;
+    color: red;
+}   
+
+#end {
+    color: red;
+}

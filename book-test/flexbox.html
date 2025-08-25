@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box</title>
+    <style>
+        .container{
+            width: 1500px;
+            height: 300px;
+            display: flex;
+            border: 1px solid black;
+                       
+        }
+        .mini{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+        }
+        .box1,.box3,.box5,.box7,.box9{
+            background-color: orange;
+        }
+        .box2,.box4,.box6,.box8{
+            background-color: green;
+        }
+        .opt1{
+            flex-direction: row;
+        }
+        .opt2{
+            flex-direction: row-reverse;
+        }
+        .opt3{
+            flex-direction: column;
+        }
+        .opt4{
+            flex-direction: column-reverse;  
+        }
+        .opt5{
+            flex-wrap: nowrap;
+        }
+        .opt6{
+            flex-wrap: wrap;
+        }
+        .opt7{
+            flex-wrap: wrap-reverse;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container opt1">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>        
+    </div>
+    <div class="container opt2">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>        
+    </div>
+    <div class="container opt3">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>        
+    </div>
+    <div class="container opt4">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>        
+    </div>
+    <div class="container opt5">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>   
+        <div class="mini box4">4</div>        
+        <div class="mini box5">5</div>        
+        <div class="mini box6">6</div>
+        <div class="mini box7">7</div>
+        <div class="mini box8">8</div>
+        <div class="mini box9">9</div>     
+    </div>
+    <div class="container opt6">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div> 
+        <div class="mini box4">4</div>        
+        <div class="mini box5">5</div>        
+        <div class="mini box6">6</div>               
+        <div class="mini box7">7</div>
+        <div class="mini box8">8</div>
+        <div class="mini box9">9</div>
+    </div>
+    <div class="container opt7">
+        <div class="mini box1">1</div>
+        <div class="mini box2">2</div>
+        <div class="mini box3">3</div>
+        <div class="mini box4">4</div>
+        <div class="mini box5">5</div>
+        <div class="mini box6">6</div>
+        <div class="mini box7">7</div>
+        <div class="mini box8">8</div>
+        <div class="mini box9">9</div>
+    </div>
+    
+</body>
+</html>

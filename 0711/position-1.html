@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Document</title>
+
+
+    <style>
+
+
+        .absolute{
+
+
+            width:200px;
+
+
+            height:200px;
+
+
+        }
+
+
+        .container{
+
+
+            width:1000px;
+
+
+            height:500px;
+
+
+            border:1px solid #333;
+
+
+            margin:50px auto;
+
+
+            position:relative;
+
+
+        }
+
+
+        .static{
+
+
+            background:red;
+
+
+            position:static;
+
+
+        }
+
+
+        .absolute{
+
+
+            position:absolute;
+
+
+            top: 50px;
+
+
+            left:40px;
+
+
+        }
+
+
+        .absolute1{
+
+
+            background:blue;
+
+
+            top:0px;
+
+
+            left:0px;
+
+
+        }
+
+
+        .absolute2{
+
+
+            background:yellowgreen;
+
+
+            top:100px;
+
+
+            left:100px;
+
+
+            cursor:pointer;
+
+
+        }
+
+
+        .absolute2:hover{
+
+
+            z-index:2;
+
+
+        }
+
+
+        .absolute3{
+
+
+            background:tomato;
+
+
+            top:200px;
+
+
+            left:200px;
+
+
+        }
+
+
+        .fixed{
+
+
+            /* view포트에 고정된다 */
+
+
+            display:block;
+
+
+            width:100px;
+
+
+            height:50px;
+
+
+            background:black;
+
+
+            color:#fff;
+
+
+            text-align:center;
+
+
+            line-height:50px;
+
+
+            position:fixed;
+
+
+            right:10px;
+
+
+            bottom:10px;
+
+
+        }
+
+
+        .sticky{
+
+
+            background:greenyellow;
+
+
+            border:3px solid green;
+
+
+            line-height:20px;
+
+
+            top:0;
+
+
+            position:sticky;
+
+
+            z-index:10;
+
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="absolute absolute1"></div>
+
+
+        <div class="absolute absolute2"></div>
+
+
+        <div class="absolute absolute3"></div>
+
+
+    </div>    
+
+
+    <div class="container">
+
+
+        <div class="absolute absolute1"></div>
+
+
+        <div class="absolute absolute2"></div>
+
+
+        <div class="absolute absolute3"></div>
+
+
+    </div>    
+
+
+    <div class="sticky">
+
+
+        이곳에 네비게이션이 위치 할 예정입니다.
+
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="absolute absolute1"></div>
+
+
+        <div class="absolute absolute2"></div>
+
+
+        <div class="absolute absolute3"></div>
+
+
+    </div>    
+
+ 
+
+    <div class="container">
+
+
+        <div class="absolute absolute1"></div>
+
+
+        <div class="absolute absolute2"></div>
+
+
+        <div class="absolute absolute3"></div>
+
+
+    </div>    
+
+ 
+
+    <div class="container">
+
+
+        <div class="absolute absolute1"></div>
+
+
+        <div class="absolute absolute2"></div>
+
+
+        <div class="absolute absolute3"></div>
+
+
+    </div>    
+
+ 
+
+    <a href="#" class="fixed">처음으로</a>
+
+
+</body>
+
+
+</html>

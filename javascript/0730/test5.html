@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ box-sizing:border-box;}
+        .container{
+            width:1000px;
+            margin:30px auto;
+        }
+        .tab{
+            display:flex;
+        }
+        a{
+            background-color:#ededed;
+        } 
+        .tab a{
+            display:block;
+            width:100px;
+            height:40px;
+            text-decoration: none;
+            text-align:center;
+            line-height:40px;
+            font-size:20px;
+            color:#000;
+        }
+        .tab a:hover{
+            background:#e0e0e0;
+        }
+        .Seoul{
+            background-color: red;
+            color:#fff;
+        }
+        .Paris{
+            background-color:green;
+            color:#fff;
+        }
+        .London{
+            background-color:orange;
+            color:#fff;
+        }
+        .tabcontent{
+            padding:30px;
+            border:1px solid #ccc;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tab 메뉴</h1>
+    <p>클릭하면 바뀌는 탭 메뉴</p>
+
+    <div class="container">
+       <div class="tab">
+          <a href="javascript:void(0)" class="tablinks" onclick="vCity(event, 'Seoul')">Seoul</a>
+          <a href="javascript:void(0)" class="tablinks" onclick="vCity(event, 'Paris')">Paris</a>
+          <a href="javascript:void(0)" class="tablinks" onclick="vCity(event, 'London')">London</a>
+       </div>
+       <div id="Seoul" class="tabcontent">
+        <p>헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다. 체포·구속·압수 또는 수색을 할 때에는 적법한 절차에 따라 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 다만, 현행범인인 경우와 장기 3년 이상의 형에 해당하는 죄를 범하고 도피 또는 증거인멸의 염려가 있을 때에는 사후에 영장을 청구할 수 있다.</p>
+       </div>
+       <div id="Paris" class="tabcontent">
+        <p>언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 청구할 수 있다.</p>
+       </div>
+       <div id="London" class="tabcontent">
+         <p>국회는 국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수 있다.</p>
+       </div>
+    </div>
+    <script>
+        function vCity(e, city) {
+            let i, tabcontent;
+            tabcontent = document.getElementsByClassName('tabcontent');
+            tablinks = document.getElementsByClassName('tablinks');
+
+            //모든 탭 숨기기
+            for(i=0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none"; 
+            }
+
+            //배경 클래스도 제거
+            for(i=0; i < tablinks.length; i++) {
+              tablinks[i].classList.remove("Seoul", "Paris", "London"); 
+            }
+
+            document.getElementById(city).style.display="block";
+            document.getElementById(city).classList.add(city);
+            //e.currentTarget.className +=" " + city; 
+            e.currentTarget.classList.add(city);
+        }
+
+        window.onload = function(){
+            document.querySelector('.tablinks').click();
+        }
+    </script>
+</body>
+</html>

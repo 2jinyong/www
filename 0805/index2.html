@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+        .fadebox{
+            width: 400px;
+            background-color: antiquewhite;
+            display: none;
+        }
+        h1{
+            cursor: pointer;
+        }
+        .slidedown{
+            display: none;
+        }
+        .anibox{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: relative;
+        }
+        .greenbox{
+          background-color: green;
+        }
+        .container{
+          display: flex;
+        }
+        .redbox{
+          background-color: red;
+        }
+        .bluebox{
+          background-color: blue;
+        }
+        .removebox{
+          width: 200px;
+          height: 50px;
+          border: 1px solid pink;
+          display: flex;
+        }
+        .removein{
+          width: 50px;
+          height: 50px;
+          background-color: hotpink;
+          border: 1px solid black;
+        }
+
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $('.show').click(function(){
+            $('.box').show();
+          });
+
+          $('.hide').click(function(){
+            $('.box').hide();
+          });
+
+        // ----------------------------2
+
+          $('.h1').click(function(){
+            $('.fadebox').fadeIn(2000);
+          });
+          $('.close').click(function(){
+            $('.fadebox').fadeOut();
+          });
+          
+        // ----------------------------3
+
+          $('.h2').click(function(){
+            $('.slidedown').slideDown(1000);
+          });
+          $('.slideclose').click(function(){
+            $('.slidedown').slideUp(1000);
+          });
+        // ----------------------------4
+          $('.anibtn').click(function(){
+            $('.anibox').animate({
+                left: '1600px'
+            },1000, function(){
+                alert("상자이동완료!!!");
+                $(this).css('left', '0px');
+            });
+          });
+          
+          $('.anistop').click(function(){
+            $('.anibox').stop();
+          });
+          
+        // ----------------------------5
+
+          $('#five').click(function(){
+            alert($('#text').val());
+            
+          });
+        // ----------------------------6
+
+          $('.appendbtn').click(function(){
+            $('.ha').append('<span>뒤</span>');
+          });
+
+          $('.prependbtn').click(function(){
+            $('.ho').prepend('<span>앞</span>');
+          });
+        // ----------------------------6
+
+        $('.before').click(function(){
+          $('.box1').before('<div class = "box redbox"></div>');
+        });
+
+        $('.after').click(function(){
+          $('.box1').after('<div class = "box bluebox"></div>');
+        });
+
+        // ----------------------------7
+
+        $('.removein').click(function(){
+          $(this).remove();
+        });
+
+        // ----------------------------8
+
+        $('.trashbtn').click(function(){
+          $('.trashcan').empty();
+        });
+
+        });
+        
+
+    </script>
+</head>
+<body>
+  <div class="trashcan">
+    <button type="button" class="trashbtn">모두비우기</button>
+      <div class="box"></div>
+      <button type="button" class="hide">숨기기</button>
+      <button type="button" class="show">보이기</button>
+
+      <p>-----------------------------------------------</p>
+
+      <h1 class="h1">공지보기</h1>
+      <div class="fadebox">
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <button type="button" class="close">닫기</button>
+      </div>
+
+      <p>-----------------------------------------------</p>
+      <h1 class="h2">자세히보기</h1>
+      <div class="slidedown">
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <p>sdafafsdf</p>
+          <button type="button" class="slideclose">닫기</button>
+      </div>
+
+      <p>-----------------------------------------------</p>
+
+      <div class="anibox"></div>
+      <button type="button" class="anibtn">출발하기</button>
+      <button type="button" class="anistop">정지</button>
+
+      <p>-----------------------------------------------</p>
+
+      <h1>5번문제</h1>
+      <input type="text" id="text"> <button id="five">출력</button>
+      <p id="rsfive"></p>
+
+      <p>-----------------------------------------------</p>
+
+      <div class="container">
+        <span class="ha">하하하하</span>
+        <span class="ho">호호호호</span>
+        
+      </div>
+      <button type="button" class="appendbtn">하하하하 뒤로</button>
+      <button type="button" class="prependbtn">호호호호 앞으로</button>
+      <p>-----------------------------------------------</p>
+      
+      <div class="container">
+        <div class="box box1"></div>
+        <div class="box greenbox"></div>
+      </div>
+      <button type="button" class="before">앞에</button>
+      <button type="button" class="after">뒤에</button>
+
+      <p>-----------------------------------------------</p>
+
+      <div class="removebox">
+        <div class="removein"></div>
+        <div class="removein"></div>
+        <div class="removein"></div>
+        <div class="removein"></div>
+      </div>
+    
+      <p>-----------------------------------------------</p>
+    
+    </div>
+
+
+</body>
+</html>

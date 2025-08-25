@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .slide{
+            width: 500px; /* 슬라이드가 보여질 영역의 너비 */
+            height: 760px; /* 슬라이드가 보여질 영역의 높이 */
+            margin: 30px auto;
+            overflow: hidden; /* 슬라이드 영역 밖의 이미지는 숨김 */
+            position: relative;
+        }
+        .slidein{
+            /* 모든 이미지를 담을 수 있는 충분한 너비. 여기서는 이미지 5개 * 500px = 2500px */
+            width: 2500px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex; /* 이미지를 가로로 나열 */
+            /* 애니메이션 시 잔상을 방지하기 위해 transition은 사용하지 않습니다. jQuery animate를 사용하기 때문에 */
+        }
+        .slidein img {
+            width: 500px; /* 각 이미지의 너비를 슬라이드 영역 너비와 동일하게 설정 */
+            height: 100%; /* 각 이미지의 높이를 슬라이드 영역 높이와 동일하게 설정 */
+            object-fit: cover; /* 이미지가 잘리거나 늘어나지 않도록 설정 */
+        }
+    </style>
+    <script>
+        $(function(){
+            function slideimg(){
+                $('.slidein').animate({
+                    left: '-500px' /* 이미지를 왼쪽으로 500px 이동 (첫 번째 이미지가 사라짐) */
+                }, 500, function(){ /* 애니메이션 완료 후 실행될 콜백 함수 */
+                    // 첫 번째 이미지를 가져와서 `.slidein`의 맨 뒤로 이동시킴
+                    $('.slidein img:first-child').appendTo('.slidein');
+                    // `.slidein`의 `left` 값을 0으로 즉시 초기화하여 자연스러운 반복을 만듦
+                    $('.slidein').css('left', 0);
+                });
+            }
+
+            // 1초마다 slideimg 함수를 반복 실행
+            // setInterval에는 함수 자체를 넘겨야 합니다. slideimg()는 함수의 실행 결과입니다.
+            setInterval(slideimg, 3000);
+        });
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <div class="slidein">
+            <img src="imges/001.jpg" alt="이미지 1">
+            <img src="imges/002.jpg" alt="이미지 2">
+            <img src="imges/003.jpg" alt="이미지 3">
+            <img src="imges/004.jpg" alt="이미지 4">
+            <img src="imges/005.jpg" alt="이미지 5">
+        </div>
+    </div>
+</body>
+</html>

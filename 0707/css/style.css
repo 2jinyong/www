@@ -1,0 +1,18 @@
+/* css시트안에서의 주석 */
+
+
+
+body { background-color: black;
+
+}
+
+
+h1{
+    background-color: dodgerblue;
+    color: white;
+}
+
+p {
+    background-color: tomato;
+    color: white;
+}

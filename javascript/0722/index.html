@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <button onclick="changeColor();">누르시오</button>
+    <script>
+        let i = 0;  //숫자를 변수로 선언
+        function changeColor(){
+            i++; //함수가 실행되면 숫자가 계속 증가하게 함
+            if(i > 7){  //만약 숫자가 7이 넘으면 다시 1로 복귀시킴
+                i = 1;
+            }
+            let bgcolor;
+            switch(i){  //1부터 7까지 숫자에 해당하는 칼라값을 만듬
+                case 1: bgcolor = "red"; break;
+                case 2: bgcolor = "orange"; break;
+                case 3: bgcolor= "yellow"; break;
+                case 4: bgcolor= "green"; break;
+                case 5: bgcolor= "blue"; break;
+                case 6: bgcolor= "indigo"; break;
+                case 7: bgcolor= "violet"; break;
+            }
+            document.getElementById("body").style.backgroundColor = bgcolor;
+        }
+    </script>
+    
+</body>
+</html>

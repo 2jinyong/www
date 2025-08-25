@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 유효성 검사</title>
+</head>
+<body>
+    <h1>이메일 유효성 검사</h1>
+    <input type="text" id="email" name="email" placeholder="이메일을 입력하세요">
+    <button onclick="checkmail()">완료</button>
+    <script>
+        function checkmail(){
+            const email = document.getElementById("email").value.trim();
+            
+            // 1. @ 기호 검사
+            if(email.indexOf('@') === -1){ //indexof 찾는 문자가없으면 -1
+                alert("@를 포함하여 이메일을 입력하세요.");
+                return; // 함수 종료
+            }
+
+            // 2. 도메인 검사
+            const domain = ["com","co.kr","org","or.kr","go.kr","net"];
+            let ok = false;
+            
+            // 이메일 주소에서 @ 뒤의 도메인 부분을 추출
+            const atIndex = email.indexOf('@');
+            const emailDomain = email.substring(atIndex + 1); // @ 다음부터 끝까지
+
+            for(let i = 0; i < domain.length; i++){
+                // emailDomain이 미리 정의된 도메인 중 하나로 끝나는지 확인
+                if(emailDomain.endsWith(domain[i])){ 
+                    ok = true;
+                    break; 
+                }
+            }
+            
+            if(ok === false){
+                alert("유효하지 않은 도메인입니다.");
+            } else {
+                alert("유효한 이메일입니다!");
+            }
+        }
+    </script>
+</body>
+</html>

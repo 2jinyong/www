@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 50px;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+        .box:hover{
+            /* transform: translate(-4px, -4px); */
+            transform: rotateX('150deg');
+            box-shadow: 8px 8px 8px 0 gray;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    transition:변환되는 과정
+        -delay:변화가 시작되는 시간을 설정
+        -duration:변화하는시간
+        -property:변화할 것을 설정
+        -timing-function:변화되는 속도를 그래프화
+
+
+    transform:변환
+        -translate(이동) 
+        -rotate(회전)
+        -scale(크기)
+        -skew(각도)
+
+    transform-grigin:변형을 어디를 중심으로 할 것인가 결정
+
+
+    animation-name:이름
+    
+
+
+
+     -->
+     
+    <div class="box">d</div>
+
+
+    
+</body>
+</html>

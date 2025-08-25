@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        div{
+
+        }
+        button{
+            height: 50px;
+            
+        }
+        .popbox{
+            display: none;
+            width: 400px;
+            height: 300px;
+            background-color: antiquewhite;
+
+        }
+        .big1{
+            position: absolute;
+            left: 100px;
+        }
+        .big2{
+            position: absolute;
+            top: 300px;
+            left: 100px;
+        }
+        .big3{
+            position: absolute;
+            top: 600px;
+            left: 100px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn1').click(function(){
+                $('.pop').show();
+            });
+        });
+        
+        $(function(){
+            $('#btn1-1').click(function(){
+                $('.pop').hide();
+            });
+        });
+        
+        $(function(){
+            $('#btn2').click(function(){
+                $('.pop2').fadeIn();
+            });
+        });
+
+        $(function(){
+            $('#btn2-1').click(function(){
+                $('.pop2').hide();
+                });
+            });
+
+        $(function(){
+            $('#btn3').click(function(){
+                $('.pop3').slideDown();
+                });
+            });
+
+        $(function(){
+            $('#btn3-1').click(function(){
+                $('.pop3').hide();
+                });
+            });
+    </script>
+</head>
+<body>
+    <div class="big big1">
+        <div class="popbox pop"><button type="button" class="btn" id="btn1-1">닫기</button></div>
+        <button type="button" class="btn" id="btn1">show</button>
+        
+    </div>
+
+    <div class="big big2">
+        <div class="popbox pop2"><button type="button" class="btn" id="btn2-1">닫기</button></div>
+        <button type="button" class="btn" id="btn2">fadein</button>
+       
+    </div>
+
+    <div class="big big3">
+        <div class="popbox pop3"><button type="button" class="btn" id="btn3-1">닫기</button></div>
+        <button type="button" class="btn" id="btn3">slidedown</button>
+        
+    </div>
+
+</body>
+</html>

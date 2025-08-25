@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>163p</title>
+</head>
+<body>
+    <h1>회원가입을 환영합니다.</h1>
+    <form>
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <label for="user-id">아이디</label>
+                    <input id="user-id" type="text" placeholder="4자~10자사이,공백없이" minlength="4" maxlength="10" autofocus required>
+                </li>
+                <li>
+                    <label for="email">이메일</label>
+                    <input id="email" type="email" required>
+                </li>
+                <li>
+                    <label for="password">비밀번호</label>
+                    <input id="password" type="password" placeholder="문자와 숫자,특수 기호 포함" required>
+                </li>
+                <li>
+                    <label for="password-check">비밀번호 확인</label>
+                    <input id="password-check" type="password" required>
+                </li>
+                <li>
+                    <label for="path">가입 경로</label>
+                    <select id="path">
+                        <option value="blog">블로그</option>
+                        <option value="search">검색</option>
+                        <option value="sns">sns</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="memo">메모</label>
+                    <textarea id="memo" rows="4" cols="40" placeholder="남길 말씀이 있다면 여기에"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        
+        <fieldset>
+            <legend>이벤트와 새로운 소식</legend>
+            <input id="y-mail" name="mail" type="radio" value="y-mail">메일 수신
+            <input id="n-mail" name="mail" type="radio" value="n-mail" checked>메일 수신 안 함
+        </fieldset>
+        
+        <input id="submit" type="submit" value="가입하기">        
+        <input id="reset" type="reset" value="취소">
+
+    </form>
+</body>
+</html>

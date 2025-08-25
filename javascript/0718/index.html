@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    제어문
+    -조건문 if else
+    -선택문 swich
+    -반복문 for / while 
+-->    
+    <script>
+        // let num = prompt("당신이 좋아하는 숫자를 입력하세요.");
+        // if(num % 2 == 0){
+        //     document.write("짝수이군요");
+        // }
+        // else{
+        //     document.write("홀수이군요");
+        // }
+        
+        let a = Number(prompt("숫자를 입력하세요"));
+        let b = Number(prompt("숫자를 입력하세요"));
+        let math = prompt("계산식(+,-,*,/)을 입력하세요");
+
+        switch(math){
+            
+            case "+" : alert("결과:"+(a+b));
+            break;
+            
+            case "-" : alert("결과:"+(a-b));
+            break;
+            
+            case "*" : alert("결과:"+(a*b));
+            break;
+            
+            case "/" : alert("결과:"+(a/b));
+            break;
+
+            default : alert("숫자와 계산기호를 정확히 입력하세요");
+            break;
+
+        }
+        
+        
+        
+        
+    </script>
+</body>
+</html>

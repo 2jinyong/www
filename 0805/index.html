@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        .box{
+            width: 500px;
+            height: 200px;
+        }
+        .red{
+            background-color: rgb(233, 95, 95);
+        }
+        .blue{
+            background-color: rgb(107, 107, 224);
+        }
+        .gray{
+            background-color: gray;
+        }
+        .slide{
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid black;
+            overflow: hidden;
+            
+        }
+        .slidein{
+            position: relative;
+            width: 1500px;
+            display: flex;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            setInterval (function(){
+                $('.slidein').animate({
+                    left: '-500px'
+                },1000, function(){
+                    $(this).append($(this).children().first());
+                    $(this).css('left',0)
+                    
+                });
+            },3000);
+        });
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <div class="slidein">
+            <div class="box gray"></div>
+            <div class="box red"></div>
+            <div class="box blue"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

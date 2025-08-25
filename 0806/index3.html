@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        fetch("sample.json")
+        .then(res => res.json())
+        .then(date => {
+            let html = '';
+            html += "<li> 이름 : " + date.name + "</li>";
+            html += "<li> 나이 : " + date.age + "</li>";
+            html += "<li> 사는곳 : " + date.city + "</li>";
+            html += "<li> 취미 : " + date.hobbies.join(", ") + "</li>";
+            document.getElementById("list").innerHTML = html;
+
+        })
+        .catch(err => {
+            console.error("json 파일을 불러오는데 오류발생" + err);
+        });
+    </script>
+</body>
+</html>

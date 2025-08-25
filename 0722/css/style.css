@@ -1,0 +1,9 @@
+body{
+    font-family: 'notoKr', sans-serif;
+}
+
+@media (min-width: 1330px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1330px;
+    }
+}

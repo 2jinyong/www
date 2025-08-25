@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      *{ box-sizing:border-box;}
+      body{
+        height: 100vh;
+      }
+      .text-center{
+        text-align:center;
+      }
+      .container{
+        width:800px;
+        margin:10px auto;
+      }
+      .row{
+        margin-left:-15px;
+        margin-right:-15px;
+        display:flex;
+        flex-wrap: wrap;
+      }
+      .col{
+        flex:0 0 33.33334%;
+        max-width: 33.33334%;
+        padding:15px;
+      }
+      .imgbox{
+        position:relative;
+      }
+      .imgbox img{
+        max-width:100%;
+        cursor:pointer;
+      }
+      .popup{
+        padding:15px;
+        border-radius:5px;
+        box-sizing: content-box;
+        background:#efefef;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+        position:fixed;
+        top: 50%;
+        left : 50%;
+        transform: translate(-50%, -50%);
+        display:none;
+        width:500px;
+        height:762px;
+      }
+      .close{
+        text-align:right;
+        position:absolute;
+        width:100%;
+        top:0;
+        padding:15px 30px;
+      }
+      .close i{
+        cursor:pointer;
+      }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+       $(function(){
+          let col = "";
+
+          for(i = 0; i < 9; i++) {
+            col += `
+               <div class="col">
+                  <div class="imgbox">
+                    <img src="imges/img-00${i+1}.jpg" class="img" alt="s-00${i+1}">
+                  </div>
+               </div>
+            `;
+          }
+         
+          $(".row").html(col);
+
+          $(document).on("click", ".img", function(){
+              //팝업창을 띄워서 큰 이미지로 출력하시오.
+              const simg = $(this).attr('src');
+              const bimg = simg.replace("img-","");
+         
+              $("#bimgbox").html(`<img src="${bimg}" alt="${bimg}">`);
+
+              $('.popup').fadeIn();
+          });
+          $(document).on("click", ".close", function(){
+              $('.popup').fadeOut();
+          });
+       });
+    </script>
+</head>
+<body>
+    <h1 class="text-center">jquery 갤러리</h1>
+    <div class="container">
+        <div class="row"></div>
+    </div>
+    <div class="popup">
+        <div class="close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div id="bimgbox"></div>
+    </div>
+</body>
+</html>

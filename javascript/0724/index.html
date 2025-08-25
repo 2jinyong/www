@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #newComment{
+            border:1px solid #ddd;
+            padding:30px;
+            box-sizing:border-box;
+            width:442px;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="newComment"></div>
+    <textarea id="comment" rows="6" cols="60" placeholder="댓글을 입력하세요."></textarea>
+    <button onClick="checkComment()">댓글등록</button>
+    
+    <script>
+        //금지어 목록
+        const bannedWords = ["병신", "멍청이", "나쁜놈", "욕설1", "욕설2"];
+        function checkComment(){
+            let input = document.getElementById("comment").value;
+            let original = input;
+            let found = false;
+
+            for(let i=0; i < bannedWords.length; i++) {
+                const bad = bannedWords[i];
+                const rs = input.indexOf(bad);
+                if(rs != -1) {
+                    found = true;
+                }
+            }
+
+            if(found) {
+                alert('욕하지 마셈');
+            }else{
+                document.getElementById("newComment").innerHTML = original;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

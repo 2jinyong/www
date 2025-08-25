@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 500px;
+            padding: 60px;
+            border: 1px solid #ddd;
+            background-color: #ededed;
+            margin: 100px auto;
+            border-radius: 10px;
+        }
+        form>div{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        label{
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+            margin: 10px;
+            text-align:right;
+        }
+        input{
+            padding: 8px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        .logbutton{
+            margin-left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return login()">
+        <div>
+            <label>아이디</label>
+            <input type="text" name="userid" id="userid">
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="logbutton">
+            <button type="submit">로그인</button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+    <script>
+        function login(){
+            const userid = document.getElementById("userid").value;
+            const password = document.getElementById("password").value;
+        
+            if(userid == ""){
+                alert("아이디를 입력하세요");
+                return false;
+            }
+            if(password == ""){
+                alert("비밀번호를 입력하세요");
+                return false;
+            }
+            if(userid == "admin" && password == "1234"){
+                document.write("로그인성공");
+            }else{
+                alert("아이디 또는 비밀번호가 틀렸습니다.")
+                return false;
+            }
+        }
+        
+    </script>
+</body>
+</html>

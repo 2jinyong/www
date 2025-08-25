@@ -1,0 +1,17 @@
+[
+  {
+    "name": "멋진 티셔츠",
+    "price": 29000,
+    "imageUrl": "https://via.placeholder.com/200?text=T-shirt"
+  },
+  {
+    "name": "편안한 청바지",
+    "price": 45000,
+    "imageUrl": "https://via.placeholder.com/200?text=Jeans"
+  },
+  {
+    "name": "튼튼한 운동화",
+    "price": 72000,
+    "imageUrl": "https://via.placeholder.com/200?text=Sneakers"
+  }
+]

@@ -1,0 +1,74 @@
+git config --global user.name "홍길동"
+git config --global user.email "이메일"
+git config --global init.defaultBranch main
+git init  : 는 git관리 시작
+git status : 는 git의 상황을 확인
+git add : 파일이름 또는 git add . 는 git에 파일을 올림
+git commit : vim모드 진입
+git commit -m "내용" : 커밋내용을 적음
+git commit -am "내용" : 변경사항 저장과 커밋을 동시에 가능
+git igrnore : 안보이게할 파일
+git log : 로그확인
+git log -oneline : 간단한 커밋 로그 확인
+git clone 저장소주소 : 원격저장소를 로컬로복제
+git diff 변경된 내용을 비교
+
+
+vim 에디터  : 
+입력 i -> 명령어 입력 모드에서 텍스트 입력모드로 전환
+입력종료 -> esc
+저장없이 강제종료 -> :q!
+저장하고 종료 -> :wq
+위로스크롤 -> k
+아래스크롤 -> j
+
+
+branch -- 분기
+
+1. 프로젝트를 하나 이상의 모습으로 관리해야 할 때
+   예) 실배포용, 테스트서버용, 새로개발...
+
+2. git branch 브랜치이름 : 새로운 브랜치를 만들기
+
+3. git branch : 브랜치의 목록확인
+
+4. git switch 뉴브랜치  : 브랜치 이동
+
+5. git switch -c 뉴브랜치  : 브랜치 만들고 동시에 이동
+
+6. git branch -d 삭제할 브랜치
+- 지워질 브랜치에만 커밋이 되어 있을경우 강제삭제 git branch -D 강제삭제 브랜치명
+
+7. 브랜치 이름 바꾸기
+ git branch -m 기존브랜치명 새브랜치명
+
+
+되돌리는법
+1. git reset -hard: 돌아가는 이후는 모두제거
+2. git revert 커밋id : 이전 커밋을 되돌리는 새 커밋 생성
+
+git marge : 브랜치 병합 / git add + commit 필요
+git rebase : 충돌이 있을경우 git add . = rebase continue
+
+Aceept Current Change : 현재 브랜치의 변경사항으로 함
+Aceept incoming Change : 병합하는 브랜치의 변경사항으로 함
+Aceept both Change : 수정된거 둘다 씀
+Compare Change : 비교
+
+
+
+echo "# stnine" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/2jinyong/stnine.git
+git push -u origin main
+
+git remote add origin https://github.com/2jinyong/stnine.git
+git branch -M main
+git push -u origin main
+
+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
+
+git commit-m "initial commit"

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>125p~137p</title>
+    <style>
+        .log{
+            width: 400px;
+
+        }        
+        .address{
+            width: 400px;
+        }
+        .choice{
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <label>
+        <form>
+            <fieldset class="log">
+                <legend>로그인</legend>
+                <lable>아이디: <input type="text" id="user_id" size="10"></lable>
+                <lable>비밀번호: <input type="text" id="user_id" size="10"></lable>
+                <input type="submit" value="로그인">               
+            </fieldset>    
+        
+            <fieldset class="address">
+                <legend>배송정보</legend>
+                <ul>
+                    <li><label for="user-name">이름</label></li>
+                    <input type="text" id="user-name">
+
+                    <li><label for="address">배송 주소</label></li>
+                    <input type="text" id="address">
+                
+                    <li><label for="emaill">이메일</label></li>
+                    <input type="email" id="emaill">
+                
+                    <li><label for="tel">연락처</label></li>
+                    <input type="tel" id="phone">
+
+                </ul>
+            </fieldset>
+            
+            <fieldset class="choice">
+                <legend>상품선택</legend>
+                <p><b>주문할 상품을 선택해주세요.</b></p>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="prod" value="s-3">선물용 3kg</label>
+                        <input type="number" min="0" max="5">개 (최대 5개)
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="prod" value="s-5">선물용 5kg</label>
+                        <input type="number" min="0" max="5">개 (최대 5개)
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="prod" value="f-3">가정용 3kg</label>
+                        <input type="number" min="0" max="5">개 (최대 5개)
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="prod" value="f-5">가정용 5kg</label>
+                        <input type="number" min="0" max="5">개 (최대 5개)
+                    </li>
+                </ul>
+
+                <p><b>포장 선택</b></p>
+                <ul>
+                    <li>
+                        <label><input type="radio" name="gift" value="yes">선물 포장</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="gift" value="no">선물 포장 안 함</label>
+                    </li>                    
+                </ul>
+            </fieldset>
+
+
+
+        </form>
+
+    </label>
+        <h1>날짜 지정하기</h1>
+        <input type="date" min="2025-07-01" max="2025-07-15">
+
+        <form action="return.php" method="post">
+            <h1>반품 정보</h1>
+            <p>만일 수령한 상품에 문제가 있다면 즉시 반품 신청해 주세요.</p>
+            <p>반품 신청시 상품의 상태를 사진으로 첨부해 주세요.</p>
+            <hr>
+            <input type="file"><br><br>
+            <input type="submit" value="반품하기">
+            <input type="reset" value="취소하기">
+        
+        
+        
+        </form>
+        
+    
+</body>
+</html>

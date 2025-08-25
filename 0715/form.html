@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        li{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="ok.html" method="post">
+        <fieldset>
+            <legend>회원가입 정보입력</legend>
+            <ul>
+                <li><label for="user-id">아이디 <input type="text" name="user-id"></label></li>
+                <li><label for="pass">비밀번호 <input type="password" name="pass"></label></li>
+                <li><label for="repass">비밀번호 확인 <input type="password" name="repass"></label></li>
+                <li>
+                    <label for="man">남자 <input type="radio" name="gender" id="man"></label>
+                    <label for="woman">여자 <input type="radio" name="gender" id="woman"></label>
+                </li>
+                <li><label for="name">이름 <input type="text" name="name"></label></li>
+                <li><label for="mail">이메일 <input type="email" name="email"></label></li>
+                <li>
+                    <input type="text" id="sample4_postcode" placeholder="우편번호">
+                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                    <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                    <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                    <span id="guide" style="color:#999;display:none"></span>
+                    <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+                    <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                </li>
+                <li>
+                    <label for="code">코딩<input type="checkbox" name="habby" id="code"></label>
+                    <label for="game">게임<input type="checkbox" name="habby" id="game"></label>
+                    <label for="health">헬스<input type="checkbox" name="habby" id="health"></label>
+                    <label for="run">런닝<input type="checkbox" name="habby" id="run"></label>
+                </li>
+            <textarea name="text" id="text" placeholder="하고싶은말을 적으세요." rows="5" cols="40"></textarea>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

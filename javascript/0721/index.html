@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            color:blue;
+        }
+        .red{
+            color:red;
+        }
+        .green{
+            color: green;
+        }
+        .aqua{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+      let i = 1;
+        while(i<= 30) {
+           if(i % 2 ===0 && i % 6===0){
+              document.write(i, "<br> ");
+           } 
+           i++;
+        }
+        document.write("======THE END======");
+
+        i = 20;
+        while(i >= 1){
+           if(i % 2 == 0){
+              document.write("<p class='blue'>" + i + "</p>");
+           }else{
+              document.write("<p class='red'>" + i + "</p>");
+           }
+           i--;
+        }
+        document.write("======THE END====== <br><br>");
+
+        i = 1;
+        let sum = 0;
+
+        while(i <= 100) {
+            sum += i; //sum = sum + i;
+            i++;
+        }
+    
+        document.write("1부터 100까지의 합은 " + sum + "입니다.","<br><br>");
+        document.write("======THE END====== <br><br>");
+        
+
+
+        let n = 1;
+        while(n<= 10) {
+            if(n % 2==0) {
+                document.write(n + "는 짝수입니다","<br>")
+            }
+            n++;
+        }
+
+        document.write("======THE END====== <br><br>");
+    
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car game</title>
+    <style>
+        *{ box-sizing: border-box;}
+        html, body{
+            height:100%;
+            overflow: hidden;
+        }
+        #carbox{
+            position:absolute;
+            width:40px;
+            top:10px;
+
+        }
+        #carbox img{
+            max-width:100%;
+        }
+        #clouds{
+            position:absolute;
+            left:50%;
+            transform: translateX(-50%);
+            display:none;
+        }
+        .parking{
+            width: 60px;
+            height: 60px;
+            border: 5px solid #000;
+            border-top-color:transparent;
+            position:fixed;
+            right:10px;
+            bottom:10px;
+        }
+        #message{
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background-color:rgba(0,0,0,0.8);
+            color:#fff;
+            padding:20px;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+            display:none;
+        }
+        
+        </style>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            //주차상태 추적변수
+            let isParked = false;
+
+            //충돌 상태 추적변수
+            let hasCollided = false;
+
+           //메시지 내용을 보여주는 함수
+           function showMessage(message) {
+              $("#message").text(message).fadeIn(500).delay(3000).fadeOut(500);
+           }
+
+           $(document).keydown(function(event){
+              console.log(event.keyCode);
+              //왼쪽 37  위 : 38 오른쪽 : 39  아래 40
+              let keyCode = event.which || event.keyCode;
+              switch(keyCode) {
+                case 37: 
+                  $('#carbox').css("transform", "rotate(-90deg)");
+                  $('#clouds').show();
+                  $("#carbox").stop().animate({
+                      left: "-=10px"
+                  }, 10, function(){
+                    checkOutBounds();
+                    checkCol();
+                    $("#clouds").hide();
+                  });           
+                break;
+                case 38: 
+                  $('#carbox').css("transform", "rotate(0deg)");
+                  $('#clouds').show();
+                  $("#carbox").stop().animate({
+                      top: "-=10px"
+                  }, 10, function(){
+                    checkOutBounds();
+                     checkCol();
+                     $("#clouds").hide();
+                  });   
+                break;
+                case 39: 
+                  $('#carbox').css("transform", "rotate(90deg)");
+                  $('#clouds').show(); 
+                  $("#carbox").stop().animate({
+                      left: "+=10px"
+                  }, 10, function(){
+                    checkOutBounds();
+                     checkCol();
+                     $("#clouds").hide();
+                  });
+                break;
+                case 40: 
+                  $('#carbox').css("transform", "rotate(-180deg)");
+                  $('#clouds').show(); 
+                  $("#carbox").stop().animate({
+                      top: "+=10px"
+                  }, 10, function(){
+                    checkOutBounds();
+                     checkCol();
+                     $("#clouds").hide();
+                  });
+                break;
+                default: 
+                  $("#carbox").stop();
+                  $('#clouds').hide();
+              }
+           });
+
+
+      //화면 끝에 가면 경고
+        function checkOutBounds() {
+            const car = $("#carbox");
+            //element의 위치값을 가져오기  car.offset() 하면 left, top
+            const carLeft = car.offset().left;
+            const carTop = car.offset().top;
+            const carRight = carLeft + car.outerWidth();
+            const carBottom = carTop + car.outerHeight();
+
+            const screenLeft = 0;
+            const screenRight = $(window).width();
+            const screenTop = 0;
+            const screenBottom = $(window).height();
+
+            if(carLeft < screenLeft ||
+                carRight > screenRight ||
+                carTop < screenTop  ||
+                carBottom > screenBottom
+            ) {
+                if(!hasCollided) {
+                   showMessage("윽~~~ 추락 합니다. 리턴 하세요.");
+                   hasCollided = true;
+                   isParked = false;
+                }
+            }else{
+                hasCollided = false;
+            }
+   
+        }
+
+        //주차를 확인하는 함수
+        function checkCol(){
+           const car = $("#carbox");
+           const parking =$(".parking");
+           
+           //차량의 위치값
+            const carLeft = car.offset().left;
+            const carTop = car.offset().top;
+            const carRight = carLeft + car.outerWidth();
+            const carBottom = carTop + car.outerHeight();
+
+            //주차장 위치값
+            const parkingLeft = parking.offset().left;
+            const parkingTop = parking.offset().top;
+            const parkingRight = parkingLeft + parking.outerWidth();
+            const parkingBottom = parkingTop + parking.outerHeight();
+
+            if(carLeft >= parkingLeft &&
+               carRight <= parkingRight &&
+               carTop >= parkingTop &&
+               carBottom <= parkingBottom
+            ){
+                if(!isParked){
+                    showMessage("주차에 성공했습니다.");
+                    isParked = true;
+                }
+            }else{
+                isParked = false;
+            }
+        }
+
+     });
+
+   </script>
+</head>
+<body>
+    <div id="carbox">
+        <img src="./car.png" alt="방구차" />
+        <div id="clouds">
+            <img src="./clouds.gif" alt="매연" />
+        </div>
+    </div>
+    <div class="parking"></div>
+    <div id="message">메시지를 보여 줍니다.</div>
+</body>
+</html>

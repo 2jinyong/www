@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        /*
+        static : 포지션 기본값으로 박스의 위치감이없음. 그래서 마진 등을 이용하여 위치를 조정.
+        absolute : 상하좌우 위치값을 갖음. 외부의 경계에 상관하지 않음
+        relative :
+        fixed : 뷰포트에(화면자체에) 고정
+        sticky :
+        */
+        .static{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        .absolute1{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 00px;
+            left: 00px;
+            
+        }
+        .absolute2{
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            cursor: pointer;
+            
+                        
+        }
+        .absolute2:hover{
+            z-index: 2;
+        }
+        .absolute3{
+            background-color:green;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        .box{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+            top: 100px;
+            z-index: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="absolute absolute1"></divc>
+        <div class="absolute absolute2"></divc>
+        <div class="absolute absolute3"></divc>
+    </div>
+    
+
+
+</body>
+</html>

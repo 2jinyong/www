@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="greetUser(dGreeting)">인사하기</button>
+    <p id="output"></p>
+
+    <script>
+        function greetUser(callback){
+            const name = prompt("이름이 무엇인가요?");
+            callback("안녕하세요?" + name + "님!!!");
+        }
+        
+        function dGreeting(message) {
+            document.getElementById("output").innerHTML = message;
+        }
+    </script>
+</body>
+</html>

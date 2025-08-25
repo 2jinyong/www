@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>157p</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <h1>회원가입을 환영합니다</h1>
+    <form>
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <label for="user-id">아이디</label>
+                    <input id="user-id" name="user-id" type="text" placeholder="4자~10자사이, 공백 없이" minlength="4" maxlength="10" autofocus>
+                </li>
+                <li>
+                    <label for="email">이메일</label>
+                    <input id="email" name="email" type="email" required>
+                </li>
+                <li>
+                    <label for="password">비밀번호</label>
+                    <input id="password" name="password" type="password" placeholder="문자와 숫자, 특수 기호 포함">
+                </li>
+                <li>
+                    <label for="password-check">비밀번호 확인</label>
+                    <input id="password-check" name="password-check" type="password" required>
+                </li>
+            </ul>            
+        </fieldset>
+
+        <fieldset>
+            <legend>이벤트와 새로운 소식</legend>
+                <input id="receipt" name="receipt" type="radio" value="receipt">
+                <label for="receipt">메일 수신</label>
+                
+                <input id="no-receipt" name="receipt" type="radio" value="no-receipt" checked>
+                <label for="no-recipt">메일 수신 안 함</label>
+                
+        </fieldset>
+
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소">
+
+    </form>
+    
+    
+</body>
+</html>

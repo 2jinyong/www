@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average results</title>
+</head>
+<body>
+    <script>
+        const q1 = 1200;
+        const q2 = 1200;
+        const q3 = 1200;
+        const q4 = Number(prompt("4분기 판매량을 입력하세요"))
+        let avg = (q1 + q2 + q3 + q4) /4;
+        let rs = q4 >= avg ? "판매량이 평균 이상입니다.":"미달입니다.";
+        document.write(rs)
+
+    </script>
+    
+</body>
+</html>

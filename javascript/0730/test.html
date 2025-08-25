@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이곳에서 테스트 합니다.</h1>
+    <p id="test"></p>
+    <button onclick="location.reload()">새로고침</button>
+    <button onclick="history.go(-1)">이전</button>
+    <button onclick="history.go(-2)">더이전</button>
+    <script>
+        const s = location.search;
+        document.getElementById("test").innerHTML = s;
+        console.log(history.length);
+    </script>
+</body>
+</html>
